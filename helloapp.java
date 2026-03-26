@@ -1,21 +1,13 @@
-public class HelloApp {
+public class HelloArgs {
     public static void main(String[] args) {
-        if (args.length == 0) {
-            System.out.println("Hello, World!");
+        // Check if arguments are passed
+        if (args.length > 0) {
+            // Join all arguments with space
+            String joinedArgs = String.join(" ", args);
+            System.out.println("Hello " + joinedArgs);
         } else {
-            String result = "Hello, ";
-            
-            int count = 0;
-            for (String name : args) {   // enhanced for loop
-                result += name;
-                count++;
-                if (count < args.length) {
-                    result += ", ";
-                }
-            }
-            
-            result += "!";
-            System.out.println(result);
+            // Default message if no arguments
+            System.out.println("Hello! No arguments provided.");
         }
     }
 }
