@@ -1,13 +1,23 @@
-public class HelloArgs {
+public class UC6Hello {
     public static void main(String[] args) {
-        // Check if arguments are passed
-        if (args.length > 0) {
-            // Join all arguments with space
-            String joinedArgs = String.join(" ", args);
-            System.out.println("Hello " + joinedArgs);
-        } else {
-            // Default message if no arguments
-            System.out.println("Hello! No arguments provided.");
+
+        // Default case
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+            return;
         }
+
+        StringBuilder result = new StringBuilder();
+
+        // Append names with delimiter
+        for (String name : args) {
+            result.append(name).append(", ");
+        }
+
+        // Remove trailing ", "
+        result.setLength(result.length() - 2);
+
+        // Print final output
+        System.out.println("Hello, " + result + "!");
     }
 }
